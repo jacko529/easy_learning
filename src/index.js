@@ -4,6 +4,9 @@ import App from './App';
 import './App.css';
 import store from "./stores/store";
 import {loadUser} from "./actions/authActions";
+import axios from 'axios';
+
+axios.defaults.baseURL = 'http://167.172.50.231/api';
 
 store.dispatch(loadUser());
 
