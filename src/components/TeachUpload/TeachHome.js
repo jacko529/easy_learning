@@ -100,8 +100,8 @@ export class TeachHome extends Component {
                             m={6}
                             s={12}
                         >
-
-      {analytics.map((person) => (
+        {analytics ?
+      analytics.map((person) => (
           <CardPanel >
               <div>
                   {person.courses.map((pet) => (
@@ -116,7 +116,7 @@ export class TeachHome extends Component {
                       </div>
 
           </CardPanel>
-      ))}
+      )) : null}
 
                   {/*{Object.keys(this.state.courseAnalytics).map((key) => {*/}
                   {/*    return this.state.courseAnalytics[key].map((station) => {*/}
