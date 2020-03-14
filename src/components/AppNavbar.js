@@ -62,7 +62,7 @@ class AppNavbar extends Component {
                     outDuration: 200,
                     preventScrolling: true
                 }}
-                sidenav={<li>Custom node!</li>}
+                sidenav={<li>Login, go full sreen!</li>}
             >
                 <NavItem href="">
                     {(navOutput === 1) ?  <strong style={{color: 'darkgray'}}>{user ? `Welcome ${user.first_name}` : ''}</strong>

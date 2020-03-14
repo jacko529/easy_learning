@@ -56,7 +56,6 @@ export class TeachHome extends Component {
 
         if(this.state.requestCompleted){
              analytics = [this.state.courseAnalytics];
-
         }
 
         return (
@@ -100,7 +99,7 @@ export class TeachHome extends Component {
                             m={6}
                             s={12}
                         >
-        {analytics !== ['no courses'] ?
+                 {!analytics.includes('no courses') ?
       analytics.map((person) => (
           <CardPanel >
               <div>
