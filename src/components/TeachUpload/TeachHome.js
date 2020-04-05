@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 
 import {
-
+    Collection,
+    CollectionItem,
     Container,
     Row,
     Col,
@@ -44,6 +45,7 @@ export class TeachHome extends Component {
             .then(res => {
                 this.setState({courseAnalytics: res.data});
                 this.setState({requestCompleted: true});
+
             })
 
     }
@@ -56,6 +58,7 @@ export class TeachHome extends Component {
 
         if(this.state.requestCompleted){
              analytics = [this.state.courseAnalytics];
+             console.log(analytics)
         }
 
         return (
@@ -99,22 +102,28 @@ export class TeachHome extends Component {
                             m={6}
                             s={12}
                         >
-                 {!analytics.includes('no courses') ?
+        {analytics.includes("no courses") ?
       analytics.map((person) => (
-          <CardPanel >
+
+          <Collection >
               <div>
                   {person.courses.map((pet) => (
-                    <h4>
-                         Course {pet.course}  has {pet.count} students, of which {"\n"}{pet.finished} have finished
-                        <p>People wanted an average course time of {pet.avg_time_wanted} minutes</p>
+                    <CollectionItem>
+                         Course {pet.course}
+                         <ul>
+                             <li> Has {pet.count} students </li>
+                             <li> {pet.finished} have finished the course</li>
+                             {/*<li> The average time of finishing is  {pet.avg_time_wanted}  </li>*/}
+                             <li> The most common learning style was  {pet.most_popular_learning_style}  </li>
+                         </ul>
                         {/*<p>The most common learning style was {pet.avg_time_wanted} minutes</p>*/}
 
-                    </h4>
+                    </CollectionItem>
 
                   ))}
                       </div>
 
-          </CardPanel>
+          </Collection>
       )) : null}
 
                   {/*{Object.keys(this.state.courseAnalytics).map((key) => {*/}
