@@ -320,7 +320,7 @@ export class Entry extends Component {
                                    button={'Start Course'}
                                    />
                                 : null}
-                                   {item.jarrard || !item.jarrard.isArray()   ?
+                                   {item.jarrard.constructor !== Array ?
 
                                        <CourseTile
                                        image={"/study.jpg"}
@@ -332,6 +332,14 @@ export class Entry extends Component {
                                        filename={item.shortest_path.resource.name_of_file}
                                        email={user.email}
                                        button={'Start Course'}
+                                       />
+
+                                       : null}
+
+                                   {Array.isArray(item.jarrard) ?
+
+                                       <NoCourseTile
+                                           image={"/study-notebooks.jpg"}
                                        />
 
                                        : null}
