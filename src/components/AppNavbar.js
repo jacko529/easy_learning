@@ -37,6 +37,7 @@ class AppNavbar extends Component {
       const { isLoading, isLoaded, isAuthenticated, user } = this.props.auth;
 
 
+    console.log(user)
 
     let navOutput = 0;
     let navOutputs = 0;
