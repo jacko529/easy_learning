@@ -324,7 +324,9 @@ export class Entry extends Component {
                                    button={'Start Course'}
                                    />
                                 : null}
-                               {!Array.isArray(item.jarrard) && !item.none   ?
+                                   {item.jarrard  ?
+                                        <div>
+                                       {!Array.isArray(item.jarrard) ?
 
                                        <CourseTile
                                        image={"/study.jpg"}
@@ -338,6 +340,8 @@ export class Entry extends Component {
                                        button={'Start Course'}
                                        />
 
+                                       : null}
+                                        </div>
                                        : null}
 
                                    {Array.isArray(item.jarrard) ?
