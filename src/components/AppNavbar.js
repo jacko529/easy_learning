@@ -32,11 +32,12 @@ class AppNavbar extends Component {
     });
   };
 
+
   render() {
       const { isLoading, isLoaded, isAuthenticated, user } = this.props.auth;
 
 
-
+    console.log(user)
 
     let navOutput = 0;
     let navOutputs = 0;
@@ -48,7 +49,7 @@ class AppNavbar extends Component {
          navOutput = 2;
     }
 
-    if(isLoaded && isAuthenticated){
+    if(isLoaded && isAuthenticated && user.length > 0){
     if (!user.user_type.includes('ROLE_TEACHER')){
         navOutputs = 5;
     }else if(user.user_type.includes('ROLE_TEACHER')){
