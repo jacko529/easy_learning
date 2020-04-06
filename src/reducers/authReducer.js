@@ -67,7 +67,7 @@ import {
         return {
           ...state,
           access_token: null,
-          user: [],
+          user: null,
           isAuthenticated: false,
           isLoading: false,
           isLoaded: true
