@@ -60,7 +60,6 @@ export class Entry extends Component {
                     this.setState({explainShortPath: res.data['explain_short_path'][0]});
 
                 } else {
-                    console.log('request', res.data['explain_short_path'][0])
                     this.setState({course: res.data['shortest_path'][0]});
                     this.setState({recommendation: res.data['jarrard'][0]});
                     this.setState({explainShortPath: res.data['explain_short_path'][0]});
@@ -215,7 +214,6 @@ export class Entry extends Component {
         const {value} = this.state
         if (this.state.requestCompleted) {
             // {this.explainShortPath.map((course) => console.log(course) )}
-            console.log('recomm', Object.keys(this.state.explainShortPath).length )
         }
         const loadingSign = (
             <div className={this.state.requestCompleted ? 'normal' : 'loader  '} style={{textAlign: 'center'}}>

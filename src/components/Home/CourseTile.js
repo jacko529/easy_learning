@@ -13,7 +13,6 @@ const CourseTile = (props) => {
     let save = (e) => {
         e.preventDefault();
     }
-    console.log('tile', props);
     let contentFile = '';
 
     if(!props.url){
@@ -25,6 +24,7 @@ const CourseTile = (props) => {
 
         <Col   m={2}
                s={6}>
+            <h3>{props.headtitle}</h3>
             <Card
                 actions={[
                    <Button><Link to={{

@@ -20,7 +20,6 @@ import {
 } from "react-router-dom";
 const CourseContent = (props) => {
 
-    console.log(props);
     let save = (e) => {
         e.preventDefault();
         console.log('account');

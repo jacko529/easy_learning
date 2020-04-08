@@ -12,20 +12,12 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
 import {loadUser} from './actions/authActions'
-import {nextActiveLoading} from './actions/nextActiveActions'
 
 import ResolveRoutes from "./components/auth/ResolveRoutes"
-import {NonUser} from "./components/Home/NonUser";
-import Loader from "react-loader-spinner";
-
-
-
 class App extends Component {
 
     componentDidMount() {
         store.dispatch(loadUser());
-        // store.dispatch(nextActiveLoading());
-
     }
 
     state = {
@@ -34,17 +26,11 @@ class App extends Component {
 
 
     render() {
-        let links = true;
-        //
-        // setTimeout(function() {  this.setState({time: true}); }.bind(this), 1600);
-
 
         return (
 
             <Router>
-
                 <Provider store={store}>
-
                     <div className={'app'} >
                         <AppNavBar/>
                        <ResolveRoutes/>
