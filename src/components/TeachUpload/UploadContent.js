@@ -57,9 +57,11 @@ export class TeachHome extends Component {
 
     handleCourse(event) {
         this.setState({selectedCourse: event.target.value})
+        console.log(this.state.selectedCourse)
     }
     handleOneCourse(event) {
         this.setState({selectedCourse: event.target.value})
+        console.log(this.state.selectedCourse)
     }
     handlePreviousSelected(event) {
         this.setState({previousSelected: event.target.value})
@@ -118,6 +120,7 @@ export class TeachHome extends Component {
 
             e.preventDefault();
 
+            console.log(this.state.value)
             axios.post('/coure-resources',data,config )
                 .then(res => {
                     window.location.reload();
@@ -125,6 +128,7 @@ export class TeachHome extends Component {
                 });
 
 
+            console.log('account');
         }
         const reflective = [
             'Reflective learners learn by thinking about information. They prefer to think things through and understand things before acting.'

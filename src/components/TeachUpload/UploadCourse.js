@@ -58,6 +58,7 @@ export class UploadCourse extends Component {
             data.append('file', this.state.course_image);
 
 
+            console.log(this.state.value)
             axios.post('/course',data,config )
                 .then(res => {
                     window.location.reload();

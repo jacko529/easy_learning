@@ -53,6 +53,7 @@ export class Entry extends Component {
             .then(res => {
                 // if it is the first course
                  this.setState({completeDataSet: res.data});
+                 console.log(this.state.completeDataSet)
 
                 if (!res.data['shortest_path'] && !res.data['jarrard'] && !res.data['none']) {
                     this.setState({course: res.data[0]});
@@ -64,6 +65,7 @@ export class Entry extends Component {
                    this.setState({explainShortPath: res.data['explain_short_path'][0]});
 
                } else {
+                    console.log('request', res.data['explain_short_path'][0])
                     this.setState({course: res.data['shortest_path'][0]});
                     this.setState({recommendation: res.data['jarrard'][0]});
                     this.setState({explainShortPath: res.data['explain_short_path'][0]});
@@ -173,6 +175,7 @@ export class Entry extends Component {
 
             axios.post('/courses', body, config)
                 .then(res => {
+                    // console.log(res.data);
                     this.setState({courseDisappear: true});
 
                 });
@@ -221,7 +224,7 @@ export class Entry extends Component {
         const {value} = this.state
         if (this.state.requestCompleted) {
             // {this.explainShortPath.map((course) => console.log(course) )}
-            // console.log('recomm', this.state.completeDataSet)
+            console.log('recomm', this.state.completeDataSet)
 
         }
         const loadingSign = (
@@ -291,6 +294,7 @@ export class Entry extends Component {
 
                         { Object.values(this.state.completeDataSet).map((item, key) =>
                             <div>
+                                {console.log(item.resource)}
                                <h3>{item.course}</h3>
                                <Row className="bottom-row">
 
@@ -308,10 +312,7 @@ export class Entry extends Component {
                                        />
                                        :null}
                             {item.shortest_path ?
-                                <Fragment>
-
-                                <CourseTile
-                                    headtitle={'Your path'}
+                               <CourseTile
                                    image={item.course_image}
                                    title={item.shortest_path.resource.name_of_resource}
                                    stage={item.shortest_path.resource.stage}
@@ -321,17 +322,14 @@ export class Entry extends Component {
                                    filename={item.shortest_path.resource.name_of_file}
                                    email={user.email}
                                    button={'Start Course'}
-
                                    />
-                                </Fragment>
-
                                 : null}
                                    {item.jarrard  ?
                                         <Fragment>
                                        {!Array.isArray(item.jarrard) ?
+
                                        <CourseTile
-                                           headtitle={'Similar peoples path'}
-                                           image={"/study.jpg"}
+                                       image={"/study.jpg"}
                                        title={item.jarrard.resource.name_of_resource}
                                        stage={item.jarrard.resource.stage}
                                        course={item.course}

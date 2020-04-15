@@ -11,6 +11,7 @@ import {
 const Tiles = (props) => {
     let save = (e) => {
         e.preventDefault();
+        console.log('account');
     }
 
     return (

@@ -58,6 +58,7 @@ export class TeachHome extends Component {
 
         if(this.state.requestCompleted){
              analytics = [this.state.courseAnalytics];
+             console.log(analytics)
         }
 
         return (

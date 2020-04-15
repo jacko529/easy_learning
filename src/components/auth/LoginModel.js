@@ -62,6 +62,7 @@ class LoginModal extends Component {
   };
 
   onSubmit = e => {
+    console.log('clock')
     e.preventDefault();
 
     const { username, password } = this.state;

@@ -37,6 +37,7 @@ class AppNavbar extends Component {
       const { isLoading, isLoaded, isAuthenticated, user } = this.props.auth;
 
 
+    console.log(user)
 
     let navOutput = 0;
     let navOutputs = 0;
@@ -79,13 +80,13 @@ class AppNavbar extends Component {
                     preventScrolling: true
                 }}
                 sidenav={
-                    <divpo>
+                    <div>
 
                     <li>    {(navOutput === 1) ?  <Logout /> : (navOutput === 2 ) ?   <RegisterModal /> : ""}</li>
                     <li>                    {(navOutput === 1) ?  <strong style={{color: 'darkgray'}}>{user !== null? `Welcome ${user.first_name}` : ''}</strong>
                         : (navOutput === 2 ) ?  <LoginModal /> : ""}
                     </li>
-                    </divpo>
+                    </div>
                 }
             >
                 <NavItem href="">

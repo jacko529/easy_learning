@@ -16,6 +16,7 @@ const InformCards = (props) => {
     let save = (e) => {
         e.preventDefault();
     }
+    console.log('tile', props.url);
     return (
 
         <Col   m={2}
