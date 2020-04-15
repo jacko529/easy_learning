@@ -27,10 +27,10 @@ const Tiles = (props) => {
             >
 
                 {props.subtitle}<br></br>
-                Global - {props.learning_styles.global}<br></br>
-                Intuitive - {props.learning_styles.intuitive}<br></br>
-                Reflective - {props.learning_styles.reflective}<br></br>
-                Verbal - {props.learning_styles.verbal}<br></br>
+                <a href={'http://www.mycollegesuccessstory.com/academic-success-tools/global-learner.html'}>Global/Sequential - {props.learning_styles.global}</a><br></br>
+                <a href={'http://www.cityu.edu.hk/ss/pltr/p1/preparation/Lecture_notes/Intuitive_Learner.html'}>Intuitive/Sensing - {props.learning_styles.intuitive}</a><br></br>
+                <a href={'https://classroom.synonym.com/reflective-learning-style-5373027.html'}>Reflective/Active - {props.learning_styles.reflective}</a><br></br>
+                <a href={'https://www.time4learning.com/learning-styles/verbal-linguistic.html'}>Verbal/Visual - {props.learning_styles.verbal}</a><br></br>
             </Card>
 
 
