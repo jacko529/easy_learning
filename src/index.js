@@ -11,6 +11,6 @@ axios.defaults.baseURL = 'https://baboonka.com/api';
 
 store.dispatch(loadUser());
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(<App/>, document.getElementById('root'));
 
 

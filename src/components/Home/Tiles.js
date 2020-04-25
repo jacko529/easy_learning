@@ -1,38 +1,43 @@
-import React from 'react';
-import { Button, Card, CardTitle,Icon, Col } from 'react-materialize';
+import React, {Fragment} from 'react';
+import {Button, Card, CardTitle, Icon} from 'react-materialize';
 
 import '../../SidePanel.css';
 
-import {
-    Link
-} from "react-router-dom";
+import {Link} from "react-router-dom";
 
 const Tiles = (props) => {
     let save = (e) => {
         e.preventDefault();
-        console.log('account');
-    }
+        console.log(props.learning_styles);
+    };
 
     return (
 
 
-            <Card
-                actions={[
-                    <Button  onClick={save}><Link to="/quiz">{props.button}</Link></Button>
+        <Card
+            actions={[
+                <Button onClick={save}><Link to="/quiz">{props.button}</Link></Button>
 
-                ]}
-                header={<CardTitle image={props.image}>{props.title}</CardTitle>}
-                revealicon={<Icon>more_vert</Icon>}
+            ]}
+            header={<CardTitle image={props.image}>{props.title}</CardTitle>}
+            revealicon={<Icon>more_vert</Icon>}
 
-            >
+        >
 
-                {props.subtitle}<br></br>
-                <a href={'http://www.mycollegesuccessstory.com/academic-success-tools/global-learner.html'}>Global/Sequential - {props.learning_styles.global}</a><br></br>
-                <a href={'http://www.cityu.edu.hk/ss/pltr/p1/preparation/Lecture_notes/Intuitive_Learner.html'}>Intuitive/Sensing - {props.learning_styles.intuitive}</a><br></br>
-                <a href={'https://classroom.synonym.com/reflective-learning-style-5373027.html'}>Reflective/Active - {props.learning_styles.reflective}</a><br></br>
-                <a href={'https://www.time4learning.com/learning-styles/verbal-linguistic.html'}>Verbal/Visual - {props.learning_styles.verbal}</a><br></br>
-            </Card>
-
+            {props.subtitle}<br></br>
+            <a href={'http://dev.orgwise.ca/sites/osi.ocasi.org.stage/files/Felder%20and%20Silverman%27s%20Index%20of%20Learning%20Styles.pdf'}>{props.learning_styles.global ?
+                <Fragment> Global - {props.learning_styles.global} </Fragment> :
+                <Fragment> Sequential - {props.learning_styles.sequential}</Fragment>}</a><br></br>
+            <a href={'http://dev.orgwise.ca/sites/osi.ocasi.org.stage/files/Felder%20and%20Silverman%27s%20Index%20of%20Learning%20Styles.pdfl'}>{props.learning_styles.intuitive ?
+                <Fragment> Intuitive - {props.learning_styles.intuitive} </Fragment> :
+                <Fragment> Sensing - {props.learning_styles.sensing} </Fragment>} </a><br></br>
+            <a href={'http://dev.orgwise.ca/sites/osi.ocasi.org.stage/files/Felder%20and%20Silverman%27s%20Index%20of%20Learning%20Styles.pdf'}>{props.learning_styles.reflective ?
+                <Fragment> Reflective - {props.learning_styles.reflective}</Fragment> :
+                <Fragment> Active - {props.learning_styles.active}</Fragment>}</a><br></br>
+            <a href={'http://dev.orgwise.ca/sites/osi.ocasi.org.stage/files/Felder%20and%20Silverman%27s%20Index%20of%20Learning%20Styles.pdf'}>{props.learning_styles.verbal ?
+                <Fragment> Verbal - {props.learning_styles.verbal} </Fragment> :
+                <Fragment>Visual - {props.learning_styles.visual} </Fragment>}</a><br></br>
+        </Card>
 
 
     );
